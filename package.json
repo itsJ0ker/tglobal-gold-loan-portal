@@ -1,0 +1,22 @@
+{
+  "name": "gold-loan-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-minded Gold Loan Intake Portal with AI Loan Assistant",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "test": "npm run test --workspace=backend",
+    "eval": "npm run eval --workspace=backend",
+    "seed": "npm run seed --workspace=backend",
+    "prisma:generate": "npm run prisma:generate --workspace=backend",
+    "prisma:migrate": "npm run prisma:migrate --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
